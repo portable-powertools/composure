@@ -1,0 +1,3 @@
+[submodule "composure"]
+	path = composure
+	url = https://github.com/erichs/composure
