@@ -1,0 +1,36 @@
+vim_configure ()
+{
+    author 'SimonL'
+    about 'Especially for usage with pyenv. Echoes the command to configure vim for make from source, using the currently-active pyenv. this may also be the system python, if "pyenv global system" or the likes was set. This installs exactly one python (py or py3 support) depending on the current version. PATH TO PYTHON MAY NOT CONTAIN WHITESPACE (TODO: or this script would would have to deal with whitespace in "env")'
+    param 'VIM_PREFIX:installation prefix, defaults to ~/.local'
+    example 'to actually configure, just type eval $(OPTS=... vim_configure)'
+    group ''
+    local PREFIXFLAG
+    [ $VIM_PREFIX ] && { [ -d $VIM_PREFIX ] && PREFIXFLAG="--prefix=$VIM_PREFIX" || { echo "invalid prefix $VIM_PREFIX" >&2; return 0; } } || {
+            PREFIXFLAG="--prefix=$HOME/.local"; echo "choosing $HOME/.local as prefix" >&2; } 
+    
+    local PYFLAG 
+    local PYCFGFLAG 
+    local LDFLAG="-Wl,-rpath=$(pyenv prefix)/lib"
+    if pyenv_is2; then
+            local PY_CONFIG=$(pyenv which python)
+            PYFLAG="--enable-pythoninterp=dynamic"
+            PYCFGFLAG="--with-python-command=$PY_CONFIG"
+    else
+            local PY_CONFIG=$(pyenv which python3)
+            PYFLAG="--enable-python3interp=dynamic"
+            PYCFGFLAG="--with-python3-command=$PY_CONFIG"
+    fi
+
+    #PYCFGFLAG="" # temporarily
+    COMMAND="env LDFLAGS=$LDFLAG ./configure \
+    --with-features=huge \
+    --enable-multibyte \
+    $PYFLAG \
+    $PYCFGFLAG \
+    --enable-gui=gtk2 \
+    --enable-cscope \
+    $PREFIXFLAG $@"
+    printf "%s\n" "$COMMAND"
+
+}
