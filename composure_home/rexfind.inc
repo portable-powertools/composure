@@ -6,6 +6,10 @@ rexfind ()
     example 'rexfind "$(pwd)" '\..*' -maxdepth 1'
     group 'layout1'
 
-    local path={1:-$(pwd)}
-    find $( [ $(pathIsAbsolute "$path") ] || expand_path "$path"} ) -regextype posix-extended -regex "${@:2}"
+    local path="$PWD"
+    if [[ $1 ]]; then
+        path="$1"
+        shift
+    fi
+    find $( [ $(pathIsAbsolute "$path") ] || expand_path "$path"} ) -regextype posix-extended -regex "$@"
 }

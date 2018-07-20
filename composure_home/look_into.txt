@@ -1,2 +1,0 @@
-function path_ext() { fn=$(basename "$1"); echo "${fn##*.}"; } # no good when no extension
-function path_name() { fn=$(basename "$1"); echo "${fn%.*}"; } # seems to work?
