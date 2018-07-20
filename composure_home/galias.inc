@@ -5,5 +5,7 @@ galias ()
     param ''
     example ''
     group ''
-    alias | grep --color=auto git
+    alias | grep --color=never git | { 
+        if [[ $1 ]]; then grep "$@"; else cat; fi
+    }
 }
