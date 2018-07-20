@@ -16,5 +16,5 @@ findmmt ()
         local typeargs=''
     fi
     shift; shift; shift;
-    find -maxdepth "$min" -mindepth "$max" $typeargs "$@"
+    find -mindepth "$min" -maxdepth "$max" $typeargs "$@"
 }
