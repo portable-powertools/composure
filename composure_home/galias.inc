@@ -1,7 +1,7 @@
 galias ()
 {
     author 'Simon Leischnig'
-    about ''
+    about 'shows all git aliases'
     param ''
     example ''
     group ''
