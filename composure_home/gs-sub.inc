@@ -1,7 +1,7 @@
 gs-sub ()
 {
     author 'Simon Leischnig'
-    about ''
+    about 'does git status for the base and for the subdirectories'
     param ''
     example ''
     group ''
