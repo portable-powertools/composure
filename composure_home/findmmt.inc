@@ -8,10 +8,13 @@ findmmt ()
     example 'findmmt 1 1 d [...] for finding all directories in pwd, but not .'
     group 'util'
    
+    local min="$1"
+    local max="$2"
     if [[ $3 ]]; then
         local typeargs="-type $3"
     else
         local typeargs=''
     fi
-    find -maxdepth "$1" -mindepth "$2" $typeargs "$@"
+    shift; shift; shift;
+    find -maxdepth "$min" -mindepth "$max" $typeargs "$@"
 }
