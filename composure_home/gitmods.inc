@@ -5,5 +5,5 @@ gitmods ()
     param ''
     example ''
     group ''
-    modls | gitselect --multi | replCddirs gs grv
+    modls | gitselect --multi | replCddirs "$@"
 }
