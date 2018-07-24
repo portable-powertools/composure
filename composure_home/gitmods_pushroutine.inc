@@ -5,5 +5,5 @@ gitmods_pushroutine ()
     param ''
     example ''
     group ''
-    gitmods --ask 'git remote update; fetch origin; gs -uno' 'gall; git commit -m powerupdate' 'git push origin master'
+    gitmods --ask 'git remote update; fetch origin; git status -uno' 'gall; git commit -m powerupdate' 'git push origin master'
 }
