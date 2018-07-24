@@ -9,11 +9,11 @@ gitmods ()
     args=()
     if [[ "$1" == '--ask' ]]; then
         shift;
-        linewise_args "$@" | lambda cmd : 'printf "echo "would do:"  %q; asksure && { %s; } || echo fail\\n" "$cmd" "$cmd"' | lambda : 'args+=("$line")'
+        lambda : 'args+=("$line")' < <( linewise_args "$@" | lambda cmd : 'printf "echo "would do:"  %q; asksure && { %s; } || echo fail\\n" "$cmd" "$cmd"'  )
     elif [[ "$1" == '--force' ]]; then
-        linewise_args "$@" | lambda cmd : 'printf "{ %s; } || echo fail at %q\\n" "$cmd" "$cmd"' | lambda : 'args+=("$line")'
+        lambda : 'args+=("$line")' < <( linewise_args "$@" | lambda cmd : 'printf "{ %s; } || echo fail at %q\\n" "$cmd" "$cmd"'  )
     else
-        linewise_args "$@" | lambda cmd : 'printf "%s\\n" "$cmd"' | lambda : 'args+=("$line")'
+        lambda : 'args+=("$line")' < <( linewise_args "$@" | lambda cmd : 'printf "%s\\n" "$cmd"'  )
     fi
     modls | gitselect --multi | replCddirs "${args[@]}"
 }
