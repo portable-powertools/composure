@@ -5,5 +5,5 @@ gitmods_askarg ()
     param ''
     example ''
     group ''
-    gitmods --Ask 'read -r arg </dev/tty'
+    gitmods --ask 'read -r arg </dev/tty'
 }
