@@ -1,4 +1,4 @@
-gitmods_pushroutine ()
+gitmods_pullroutine ()
 {
     author 'Simon Leischnig'
     about ''
