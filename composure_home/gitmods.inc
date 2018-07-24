@@ -9,7 +9,7 @@ gitmods ()
     args=()
     if [[ "$1" == '--ask' ]]; then
         shift;
-        lambda : 'args+=("$line")' < <( linewise_args "$@" | lambda cmd : 'printf "echo would do %q; asksure && { %s; } || echo fail\\n" "$cmd" "$cmd"'  )
+        lambda : 'args+=("$line")' < <( linewise_args "$@" | lambda cmd : 'printf "echo would do %q; asksure && { { %s; } || echo fail at %q; } \\n" "$cmd" "$cmd" "$cmd"'  )
     elif [[ "$1" == '--force' ]]; then
         shift
         lambda : 'args+=("$line")' < <( linewise_args "$@" | lambda cmd : 'printf "{ %s; } || echo fail at %q\\n" "$cmd" "$cmd"'  )
