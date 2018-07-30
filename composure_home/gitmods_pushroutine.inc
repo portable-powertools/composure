@@ -1,7 +1,7 @@
 gitmods_pushroutine ()
 {
     author 'Simon Leischnig'
-    about ''
+    about 'opens a minimal UI on git repos in "gitmods_ls" and  opens a shell on each of them'
     param ''
     example ''
     group ''
