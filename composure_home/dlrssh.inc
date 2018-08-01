@@ -6,6 +6,13 @@ dlrssh ()
     example ''
     group 'system'
     
-    set -- leis_si RMC-LX0083 2222 22 ssh.robotic.dlr.de
-    ssh -l "$1" -L "$3:$2:$4" $5
+    local localport=2222
+    local remoteport=22
+    local pcname=RMC-LX0083
+
+    local address="$localport:$pcname:$remoteport"
+    local loginname="leis_si"
+    local hostname="ssh.robotic.dlr.de"
+
+    ssh -l "$loginname" -L "$address" "$hostname" "$@"
 }
