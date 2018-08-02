@@ -1,7 +1,7 @@
 dlrsocks ()
 {
     author 'Simon Leischnig'
-    about ''
+    about '8080 socks proxy into dlr'
     param ''
     example ''
     group ''
