@@ -5,5 +5,5 @@ dlrsocks ()
     param ''
     example ''
     group ''
-    echo ssh -D 8080 leis_si@ssh.robotic.dlr.de
+    ssh -D 8080 leis_si@ssh.robotic.dlr.de
 }
