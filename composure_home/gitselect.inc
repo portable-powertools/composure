@@ -5,5 +5,5 @@ gitselect ()
     param ''
     example ''
     group ''
-    filter : '[[ -d "$line" ]]' | filter : 'isGit "$line"' | interactiveSelect --preview '(cd {}; git remote update; git status -uno; git remote -v;)' "$@"
+    modls | filter : '[[ -d "$line" ]]' | filter : 'isGit "$line"' | interactiveSelect --preview '(cd {}; git remote update; git status -uno; git remote -v;)' "$@"
 }
