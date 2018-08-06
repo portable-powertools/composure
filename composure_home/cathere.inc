@@ -1,9 +1,9 @@
 cathere ()
 {
     author 'Simon Leischnig'
-    about ''
+    about 'simple printing of the here.layout file'
     param ''
-    example ''
-    group ''
+    example 'cathere'
+    group 'touchstone'
     cat here.layout
 }
