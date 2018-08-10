@@ -1,9 +1,10 @@
 vhelp ()
 {
     author 'Simon Leischnig'
-    about ''
-    param ''
-    example ''
-    group ''
+    about 'appends --help to the given command (varargs) and pipes it into vim (vless)'
+    param 'varargs command'
+    example 'vhelp find'
+    example 'vhelp git branch'
+    group 'helpers'
     "$@" --help | vless
 }
