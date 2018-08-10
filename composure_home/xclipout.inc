@@ -1,9 +1,9 @@
 xclipout ()
 {
     author 'Simon Leischnig'
-    about ''
+    about 'echoes the system clipboard (primary)'
     param ''
     example ''
-    group ''
+    group 'system'
     xclip -o -selection clipboard
 }
