@@ -11,7 +11,7 @@ vimrg ()
     local flags=("--vimgrep")
     while [[ $1 ]]; do
         if [[ "$1" == '--ni' ]]; then
-            flags+='--no-ignore-vcs'
+            flags+=("--no-ignore-vcs")
             shift;
             continue;
         fi
