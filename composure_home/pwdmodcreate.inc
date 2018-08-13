@@ -5,6 +5,9 @@ pwdmodcreate ()
     param ''
     example ''
     group 'touchstone'
+    if [[ ! -f module.layout ]]; then
+        touch module.layout
+    fi
     pwdmodvalid || ( old="$( [ -f module.sh ] && cat module.sh )"
     {
         extract_pathadd TS_MODULES '' "\$mod_$(pwdmodname)_root"
