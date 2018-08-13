@@ -9,5 +9,5 @@ pwdmodcreate ()
     {
         extract_pathadd TS_MODULES '' "\$mod_$(pwdmodname)_root"
         [[ -n $old ]] && echo "$old"
-    } > module.sh )
+    } > module.sh ) || return 0
 }
