@@ -1,9 +1,9 @@
 pwdmodname ()
 {
     author 'Simon Leischnig'
-    about ''
+    about 'evaluates the module name in the current directory'
     param ''
     example ''
-    group ''
+    group 'touchstone'
     layout_eval module "$PWD" varecho module_name
 }
