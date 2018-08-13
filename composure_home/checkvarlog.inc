@@ -16,7 +16,7 @@ checkvarlog ()
         fi
         return 1
     else
-        log_error "$*" "is the arg list" "$size is the size"
+        log_error "$*" "is the arg list, $1 is arg 1" "$size is the size"
         log_error bla "$*"
         if [[ "$1" == '-p' ]]; then
             vecho 0 "$hsize"
