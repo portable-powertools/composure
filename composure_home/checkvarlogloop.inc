@@ -1,12 +1,13 @@
 checkvarlogloop ()
 {
     author 'Simon Leischnig'
-    about ''
+    about 'checks that my log folder doesnt get too big, its a serious issue unfortunately...'
     param ''
     example ''
     group ''
+    checking...
     while :; do
-        checkvarlog
+        checkvarlog "$@"
         sleep 1m
     done
 }
