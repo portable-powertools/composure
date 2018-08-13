@@ -5,6 +5,6 @@ gitmods_pullroutine ()
     param ''
     example ''
     group 'git touchstone'
-    gitmods --ask 'git remote update; fetch origin; git status -uno' 'git pull' 'exit'
+    gitmods --ask 'git remote update; git fetch origin; git status -uno' 'git pull' 'exit'
 
 }
