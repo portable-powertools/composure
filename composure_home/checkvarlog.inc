@@ -10,6 +10,7 @@ checkvarlog ()
     log_error "$*" "is the arg list"
     
     if [[ "$size" -gt '500000' ]]; then
+        log_error "$*" "is the arg list" "$size is the size"
         synthmsg 'sorry, but your log folder is at '"$hsize"' again'
         log_error bla "$*"
         if [[ "$1" == '-p' ]]; then
