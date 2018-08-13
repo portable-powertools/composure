@@ -7,7 +7,6 @@ checkvarlogloop ()
     group ''
     echo "checking continuously /var/log size with flags $*..."
     while :; do
-        log_error checkvarlog "$@"
         checkvarlog "$@"
         sleep 1m
     done
