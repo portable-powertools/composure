@@ -5,5 +5,5 @@ synthmsg ()
     param 'the message'
     example ''
     group ''
-    spd-say -r 20 -t female3 -m none "$@"
+    spd-say -r 0 -t female2 -m none "$@"
 }
