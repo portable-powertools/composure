@@ -10,7 +10,14 @@ checkvarlog ()
     
     if [[ "$size" -gt '500000' ]]; then
         synthmsg 'sorry, but your log folder is at '"$hsize"' again'
+        if [[ "$1" == '-p' ]]; then
+            vecho 0 "$hsize"
+        fi
         return 1
+    else
+        if [[ "$1" == '-p' ]]; then
+            vecho 0 "$hsize"
+        fi
     fi
     return 0
 }
