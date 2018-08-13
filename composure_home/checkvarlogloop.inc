@@ -5,7 +5,7 @@ checkvarlogloop ()
     param ''
     example ''
     group ''
-    checking...
+    echo 'checking continuously /var/log size...'
     while :; do
         checkvarlog "$@"
         sleep 1m
