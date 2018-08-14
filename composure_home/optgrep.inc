@@ -1,13 +1,13 @@
 optgrep ()
 {
     author 'Simon Leischnig'
-    about ''
+    about 'greps, only when arguments are supplied, else uses cat'
     param ''
     example ''
-    group ''
-    if [[ -n $1 ]]; then
+    group 'util'
+    if [[ -n "${1+set}" ]]; then
         grep "$@"
     else
-        cat
+        cat -
     fi
 }
