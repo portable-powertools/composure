@@ -5,7 +5,7 @@ shellref ()
     param ''
     example ''
     group ''
-    local shellrefdir="~/sandbox/shellref"
+    local shellrefdir="$HOME/sandbox/shellref"
     local shellreffile="$shellrefdir/$1.txt"
     if [[ -e "$shellreffile" ]]; then
         cat "$shellreffile" | {
@@ -16,6 +16,7 @@ shellref ()
             fi
         }
     else
-        return 1
+        log_error no shellref for "$1" - displaying --help
+        "$1" --help
     fi
 }
