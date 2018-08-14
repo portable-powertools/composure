@@ -12,5 +12,5 @@ shellref ()
     else
         log_error "no shellref for $1, trying $1 --help"
         "$1" --help
-    fi | if [[ $2 ]]; then grep "$@"; else cat; fi 
+    fi | optgrep "${@:2}"
 }
