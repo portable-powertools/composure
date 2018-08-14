@@ -6,5 +6,5 @@ vhelp ()
     example 'vhelp find'
     example 'vhelp git branch'
     group 'helpers'
-    "$@" --help | vless
+    "$@" --help 2>&1 | vless
 }
