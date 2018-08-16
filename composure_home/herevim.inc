@@ -5,5 +5,5 @@ herevim ()
     param ''
     example ''
     group ''
-    here vim here.layout -c 'normal -a'
+    here vim here.layout -c 'normal -a:term<CR>'
 }
