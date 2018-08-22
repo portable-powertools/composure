@@ -1,9 +1,10 @@
 editglobalgitignore ()
 {
     author 'Simon Leischnig'
-    about ''
+    about 'edit my global gitignore'
     param ''
     example ''
-    group ''
+    group 'system'
+    group 'git'
     vim "$mod_git_root/git-config/global.gitignore"
 }
