@@ -5,5 +5,5 @@ test1 ()
     param ''
     example ''
     group ''
-    draft
+    exec bash
 }
