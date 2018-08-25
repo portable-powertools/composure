@@ -5,5 +5,5 @@ md ()
     param 'the directory name'
     example ''
     group 'system'
-    ( mkdir -p "$1" && cd "$1" )
+    mkdir -p "$1" && cd "$1"
 }
