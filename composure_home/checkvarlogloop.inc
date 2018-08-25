@@ -8,6 +8,6 @@ checkvarlogloop ()
     echo "checking continuously /var/log size with flags $*..."
     while :; do
         checkvarlog "$@"
-        sleep 1m
+        sleep 30s
     done
 }
