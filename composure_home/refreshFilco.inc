@@ -7,6 +7,5 @@ refreshFilco ()
     group ''
     helppath ''
     url ''
-    xinput disable 'FILCO Bluetooth Keyboard'
-    xinput enable 'FILCO Bluetooth Keyboard'
+    refreshXinput  'FILCO Bluetooth Keyboard'
 }
