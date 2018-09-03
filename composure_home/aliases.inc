@@ -18,7 +18,6 @@ aliases ()
     else
         log_error "need major grep argument in 'aliases' function"
     fi
-    log_error "${majorargs[@]}"
 
     alias | grep --color=never "${majorargs[@]}" | {
         
