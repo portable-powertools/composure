@@ -19,10 +19,11 @@ aliases ()
         log_error "need major grep argument in 'aliases' function"
     fi
 
-    alias | grep --color=never "${majorargs[@]}" | {
+    # alias | grep --color=never "${majorargs[@]}" | {
+    alias | grep "${majorargs[@]}" | {
         
         if [[ -n "$*" ]]; then
-            grep "--color=never" "$@"
+            grep "$@"
         else
             cat
         fi
