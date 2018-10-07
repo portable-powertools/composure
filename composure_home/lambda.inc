@@ -1,5 +1,6 @@
 lambda () 
 { 
+    vecho 0 asdfkasdjflksjdf
     local logtag="[$RANDOM]";
     local with_arrays=1;
     local delim;
