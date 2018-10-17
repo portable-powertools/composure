@@ -1,9 +1,9 @@
 ip ()
 {
     author 'Simon Leischnig'
-    about ''
+    about 'starts ipython with magic commands enabled'
     param ''
     example ''
     group ''
-    ipython -c 'get_ipython().magic("load_ext autoreload"); get_ipython().magic("autoreload 2")' -i
+    ipython -c 'get_ipython().magic("load_ext autoreload"); get_ipython().magic("autoreload 2")' -i "$@"
 }
