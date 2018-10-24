@@ -1,9 +1,9 @@
 ecl ()
 {
     author 'Simon Leischnig'
-    about ''
+    about 'launches my current eclipse'
     param ''
     example ''
-    group ''
+    group 'misc'
     ~/installations/rcp-latest-2018-09/eclipse/eclipse
 }
