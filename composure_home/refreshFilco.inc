@@ -8,5 +8,4 @@ refreshFilco ()
     helppath ''
     url ''
     refreshXinput  'FILCO Bluetooth Keyboard'
-    echo test
 }
