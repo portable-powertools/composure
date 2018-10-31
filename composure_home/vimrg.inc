@@ -17,5 +17,5 @@ vimrg ()
         fi
         break;
     done
-    vim +':QToggle' -q <(rg "${flags[@]}" "$@")
+    vim +':copen' -q <(rg "${flags[@]}" "$@")
 }
