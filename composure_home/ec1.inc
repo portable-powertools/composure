@@ -5,5 +5,5 @@ ec1 ()
     param ''
     example ''
     group ''
-    ssh -i admin_frankfurt.pem ubuntu@ec2-3-121-186-114.eu-central-1.compute.amazonaws.com
+    ssh -i ~/sandbox/ec2/admin_frankfurt.pem ubuntu@ec2-3-121-186-114.eu-central-1.compute.amazonaws.com
 }
