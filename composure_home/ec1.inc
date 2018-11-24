@@ -1,7 +1,7 @@
 ec1 ()
 {
     author 'Simon Leischnig'
-    about ''
+    about '1st ec2 instance'
     param ''
     example ''
     group ''
