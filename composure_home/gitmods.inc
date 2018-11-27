@@ -19,6 +19,6 @@ gitmods ()
     else
         lambda : 'args+=("$line")' < <( linewise_args "$@" | lambda cmd : 'printf "%s\\n" "$cmd"'  )
     fi
-    modls | gitselect --multi | replCddirs "${args[@]}"
+    modls | filter dir : '[ -d "$dir/.git" ]' | gitselect --multi | replCddirs "${args[@]}"
 }
 
