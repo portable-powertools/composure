@@ -5,5 +5,6 @@ appender ()
     param ''
     example ''
     group ''
-    lambda : '{ echo "# $line {{{"; eval "$line"; echo "# $line END }}}"; } >> onefile.sh'
+    local outfile="${1:-appended}"
+    lambda : '{ echo "# $line {{{"; eval "$line"; echo "# $line END }}}"; } >> "$outfile"'
 }
