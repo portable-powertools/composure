@@ -12,7 +12,7 @@ modcd ()
         local query="$*"
     fi
     {
-        cddir="$(env | grep 'mod_\S*_root' | sed 's/[^=]*=\(.*\)$/\1/' | fzf -q "$query" )"
+        cddir="$(env | grep 'mod_\S*_root' | sed 's/[^=]*=\(.*\)$/\1/' | fzf -1 -q "$query" )"
         [[ -n $cddir ]] && cd "$cddir"
     }
 }
