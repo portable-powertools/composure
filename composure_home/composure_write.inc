@@ -5,5 +5,28 @@ composure_write ()
     param ''
     example ''
     group ''
-    write headset_refresh | sed 's/^\s*echo "edit me.*/  headset_refresh  || exit 1/' > $mod_composure_root/scripts.bin.d/headset_refresh.sh
+
+    if [[ $1 == "-f" ]]; then
+        local force=1
+        shift
+    fi
+    if command -v "$1"; then
+        local fun="$1"
+    else
+        echo "$1 is not callable" 1>&2
+        return 1
+    fi
+    local scriptname="$mod_composure_root/scripts.bin.d/$fun.sh"
+    if [[ ! -e ]]; then
+        #statements
+    fi
+    if [[ ! -e "$scriptfile" || $force  ]]; then
+        echo 'specify -f for forcing to overwrite ' "$scriptfile" 1>&2
+        return 1
+    fi
+    write "$fun" | sed 's/^\s*echo "edit me.*/  '$fun'  || exit 1/' > "$scriptname"
+    if [[ $? ]]; then
+        chmod +x "$scriptname"
+        echo written to "$scriptfile"
+    fi
 }
