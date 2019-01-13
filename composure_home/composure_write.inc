@@ -8,7 +8,6 @@ composure_write ()
 
     if [[ $1 == "-f" ]]; then
         local force=1
-        echo force writing enabled 1>&2
         shift
     fi
     if command -v "$1" 1>/dev/null 2>&1; then
@@ -25,7 +24,7 @@ composure_write ()
     write "$fun" | sed 's/^\s*echo "edit me.*/  '$fun'  || exit 1/' > "$scriptname"
     if [[ $? == '0' ]]; then
         chmod +x "$scriptname"
-        echo written to "$scriptfile"
+        echo written to "$scriptname"
     fi
 
 }
