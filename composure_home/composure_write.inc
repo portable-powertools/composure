@@ -17,9 +17,6 @@ composure_write ()
         return 1
     fi
     local scriptname="$mod_composure_root/scripts.bin.d/$fun.sh"
-    if [[ ! -e ]]; then
-        #statements
-    fi
     if [[ ! -e "$scriptfile" || $force  ]]; then
         echo 'specify -f for forcing to overwrite ' "$scriptfile" 1>&2
         return 1
@@ -29,4 +26,5 @@ composure_write ()
         chmod +x "$scriptname"
         echo written to "$scriptfile"
     fi
+
 }
