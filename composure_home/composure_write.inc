@@ -25,7 +25,7 @@ composure_write ()
         return 1
     fi
     write "$fun" | sed 's/^\s*echo "edit me.*/  '$fun'  || exit 1/' > "$scriptname"
-    if [[ $? ]]; then
+    if [[ $? == '0' ]]; then
         chmod +x "$scriptname"
         echo written to "$scriptfile"
     fi
