@@ -5,5 +5,5 @@ hist ()
     param ''
     example ''
     group ''
-    history | tail -n 10 | cut -d ' ' -f 5-
+    history | tail -n ${1:-10} | cut -d ' ' -f 5-
 }
