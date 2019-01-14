@@ -5,5 +5,5 @@ vtodo ()
     param ''
     example ''
     group ''
-    vim ~/Documents/todo.
+    vim ~/Documents/todo.md
 }
