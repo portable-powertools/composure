@@ -5,5 +5,7 @@ netcat_shell ()
     param ''
     example ''
     group ''
-    cat /tmp/f | /bin/sh -i 2>&1 | nc -l 127.0.0.1 1234 > /tmp/f
+    local fifo="$(mktemp -u -t fifo_XXXXXX)".$$.$RANDOM
+    mkfifo -m 0600 "$fifo"
+    cat "$fifo" | /bin/sh -i 2>&1 | netcat -l 127.0.0.1 ${1:-1234} > "$fifo"
 }
